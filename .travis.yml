@@ -6,10 +6,6 @@ sudo: false
 before_install: rm Gemfile.lock || true
 script: bundle exec rake test
 matrix:
-   - rvm: 1.9.3
-    env: PUPPET_GEM_VERSION="~> 3.0"
-  - rvm: 2.0.0
-    env: PUPPET_GEM_VERSION="~> 3.0"
   - rvm: 2.0.0
     env: PUPPET_GEM_VERSION="~> 3.0" FUTURE_PARSER="yes"
   - rvm: 2.1.0

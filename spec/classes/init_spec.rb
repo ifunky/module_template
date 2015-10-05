@@ -5,7 +5,7 @@ describe 'template', :type => :class do
       :osfamily  => 'windows'
   } }
 
- context 'The catalog should compile' do
+ describe 'The catalog should compile' do
    let(:title) { '' }
    let(:params) {{
        :ensure          => 'present',
@@ -18,7 +18,7 @@ describe 'template', :type => :class do
    }
  end
 
-  context 'Not passing ensure correct values should fail' do
+  describe 'Not passing ensure correct values should fail' do
     let(:title) { '' }
     let(:params) {{
         :ensure           => 'nope',
@@ -28,14 +28,14 @@ describe 'template', :type => :class do
     it { should compile.and_raise_error(/ERROR: You must specify present or absent/) }
   end
 
-  context 'Not passing example_path should fail' do
+  describe 'Not passing example_path should fail' do
     let(:title) { '' }
     let(:params) {{
         :ensure           => 'present',
         :example_path 		=> ''
     }}
 
-    it { should compile.and_raise_error(/ERROR:: example_path was not specified/) }
+    it { should compile.and_raise_error(/\"\" is not an absolute path/) }
   end
 
 end

@@ -24,7 +24,7 @@ Getting Started
 
  4. You can now run the numerous rake commands:
 
-     `rake -`
+     `rake -t`
 
  5. Make sure the tests are passing and that you have everything required for Puppet module development: 
 

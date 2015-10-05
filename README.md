@@ -20,22 +20,23 @@ Getting Started
  2. cd to module_template
  3. Run
 
-    bundle install
+    `bundle install`
 
  4. You can now run the numerous rake commands:
 
-     rake -t
+     `rake -`
 
  5. Make sure the tests are passing and that you have everything required for Puppet module development: 
 
-     rake spec
+     `rake spec`
 
  6. You can also run the other checks as well:
-| Command	| Description |
-|-------------	|---
-| `rake lint` |  # Run puppet-lint
-| `rake syntax` |  Syntax check Puppet manifests and templates
-| `rake test` |   Run syntax, lint, and spec tests
+ 
+| Command	   | Description
+|------------- |-------------
+| `rake lint`  | Run puppet-lint
+| `rake syntax`| Syntax check Puppet manifests and templates
+| `rake test`  | Run syntax, lint, and spec tests
 
 
 

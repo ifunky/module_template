@@ -39,5 +39,7 @@ Getting Started
 | `rake test`  | Run syntax, lint, and spec tests
 
 
+7.  To clean the module of git files and start with a template README.md run the following rake task:
+    `rake clean`
 
-
+All you need to do now is rename the folder and git init!

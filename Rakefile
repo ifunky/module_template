@@ -36,6 +36,13 @@ task :test => [
          :spec
      ]
 
+desc 'Cleans up and prepares blank module'
+task :clean do
+  puts 'Cleaning .git folder and creating README.md template'
+  FileUtils.rm_rf('.git')
+  File.rename('README_TEMPLATE.md', 'README.md')
+end
+
 namespace :ci do
   task :all => ['ci:setup:rspec', 'spec', 'syntax', 'lint', 'spec']
 end

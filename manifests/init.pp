@@ -15,8 +15,17 @@ class template (
   validate_re($ensure,['^(present|absent)$'], 'ERROR: You must specify present or absent')
   validate_absolute_path($example_path)
 
-  if (::osfamily != 'windows'){
-    fail("${::osfamily} not supported")
+  if (empty($example_path)){
+    fail 'ERROR:: example_path was not specified'
   }
+
+  if (downcase($::osfamily) != 'windows') {
+    fail 'ERROR:: This module will only work on Windows.'
+  }
+
+  class { '::template::install': } ->
+  class { '::template::config': } ~>
+  class { '::template::service': } ->
+  Class['::template']
 
 }

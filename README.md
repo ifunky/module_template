@@ -42,4 +42,8 @@ Getting Started
 7.  To clean the module of git files and start with a template README.md run the following rake task:
     `rake clean`
 
-All you need to do now is rename the folder and git init!
+All you need to do now is rename the folder, change the name of "template" in the code and git init!
+
+> NOTE:  I took some inspiration from Gareth's skeleton
+> [here](https://github.com/garethr/puppet-module-skeleton) when I
+> created this module

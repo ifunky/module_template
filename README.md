@@ -16,7 +16,8 @@ What's in this module?
 Getting Started
 ---------------
 
- 1. Clone this repo!
+ 1. Clone this repo into a new target folder
+    `git clone https://github.com/ifunky/module_template.git new_foldername`
  2. cd to module_template
  3. Run
 

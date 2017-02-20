@@ -9,7 +9,7 @@ describe 'template', :type => :class do
       :example_path	=> 'c:\Temp'
   }}
 
-  it { should contain_class('template::install').that_comes_before('template::config') }
+  it { should contain_class('template::install').that_comes_before('Class[template::config]') }
 
   context 'should compile with default values' do
     it {

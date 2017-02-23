@@ -29,7 +29,7 @@ describe 'template', :type => :class do
         :ensure => 'nope',
     }}
 
-    it { should compile.and_raise_error(/ERROR: You must specify present or absent/) }
+    it { should compile.and_raise_error(/ERROR:: You must specify present or absent/) }
   end
 
   context 'when not passing example_path should fail' do
@@ -38,7 +38,7 @@ describe 'template', :type => :class do
         :example_path	=> ''
     }}
 
-    it { should compile.and_raise_error(/\"\" is not an absolute path/) }
+    it { should compile.and_raise_error(/ERROR:: You must specify a correct path/) }
   end
 
 end

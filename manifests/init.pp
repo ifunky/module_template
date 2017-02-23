@@ -8,16 +8,19 @@
 #
 # @author Dan @ iFunky.net
 class template (
-  $ensure       = undef,
-  $example_path = $template::params::example_path,
+  String $ensure       = undef,
+  String $example_path = $template::params::example_path,
 ) inherits template::params {
 
-  validate_re($ensure,['^(present|absent)$'], 'ERROR: You must specify present or absent')
-  validate_absolute_path($example_path)
-
-  if (empty($example_path)){
-    fail 'ERROR:: example_path was not specified'
+  unless $example_path =~ Stdlib::Absolutepath {
+    fail ('ERROR:: You must specify a correct path')
   }
+
+  unless $ensure =~ /^(present|absent)$/ {
+    fail ('ERROR:: You must specify present or absent')
+  }
+
+  #notice('c:\temp' =~ Stdlib::Windowspath)
 
   if (downcase($::osfamily) != 'windows') {
     fail 'ERROR:: This module will only work on Windows.'
